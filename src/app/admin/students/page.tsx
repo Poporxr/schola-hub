@@ -1,0 +1,124 @@
+import Pagination from "@/components/Pagination";
+import { CalendarCheck, Plus, Search, UserCheck, UserPlus, Users } from "lucide-react";
+import Image from "next/image";
+import { StudentRow } from "@/utils/types";
+import { students } from "@/utils/students";
+import Link from "next/link";
+
+export default function page() {
+    return (
+        <div className="px-4">
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <Users className="w-6 h-6 text-blue-600" />
+                        </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">1,248</h3>
+                    <p className="text-sm text-gray-500">Total Students</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <UserCheck className="w-6 h-6 text-green-600" />
+                        </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">1,186</h3>
+                    <p className="text-sm text-gray-500">Active Students</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                            <UserPlus className="w-6 h-6 text-purple-600" />
+                        </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">48</h3>
+                    <p className="text-sm text-gray-500">New This Month</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                            <CalendarCheck className="w-6 h-6 text-orange-600" />
+                        </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">94%</h3>
+                    <p className="text-sm text-gray-500">Attendance Rate</p>
+                </div>
+            </div>
+
+            {/* <!-- Students Table -->*/}
+            <div className="bg-white  rounded-xl border border-slate-200 shadow-sm">
+                <div className="p-6 border-b border-gray-200">
+                    <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg font-bold text-gray-900">All Students</h3>
+                        <button className="flex items-center gap-2 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                            <Plus className="w-4 h-4" />
+                            <span className="text-sm font-medium">Add Student</span>
+                        </button>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <div className="relative flex-1">
+                            <input type="text" placeholder="Search students..." className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                            <Search className="w-5 h-5 text-gray-400 absolute left-3 top-2.5" />
+                        </div>
+                        <select className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>All Classes</option>
+                            <option>Grade 1</option>
+                            <option>Grade 2</option>
+                            <option>Grade 3</option>
+                            <option>Grade 4</option>
+                            <option>Grade 5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div className="overflow-x-auto">
+                    <table className="w-full ">
+                        <thead className="bg-gray-50 border-b border-gray-200">
+                            <tr>
+                                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Name</th>
+                                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Class</th>
+                                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Age</th>
+                                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Gender</th>
+                                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Status</th>
+                                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200">
+                            {students.map((student) => (
+                                <tr className="hover:bg-gray-50" key={student.id}>
+                                    <td className="px-6 py-4">
+                                        <div className="flex items-center gap-3">
+                                            <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Student" className="w-10 h-10 rounded-full object-cover" width={20} height={20} />
+                                            <div>
+                                                <p className="text-sm font-semibold text-gray-900">{student.name}</p>
+                                                <p className="text-xs text-gray-500">{student.id}</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4 text-sm text-gray-700">{student.className}</td>
+                                    <td className="px-6 py-4 text-sm text-gray-700">{student.age}</td>
+                                    <td className="px-6 py-4 text-sm text-gray-700">{student.gender}</td>
+                                    <td className="px-6 py-4">
+                                        <span className={`px-3 py-1 text-xs font-semibold ${student.status === "Active" ? 'text-green-700 bg-green-100 ' : "text-red-700 bg-red-100 " }rounded-full`} >{student.status}</span>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <Link href={`/admin/students/${student.id}`} className="text-blue-600 hover:text-blue-700 text-sm font-medium">View Student</Link>
+                                    </td>
+                                </tr>
+                            ))}
+
+                        </tbody>
+                    </table>
+                </div>
+                <Pagination />
+            </div>
+        </div>
+    )
+}
+
