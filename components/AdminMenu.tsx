@@ -22,8 +22,8 @@ import { usePathname } from "next/navigation";
 const AdminMenu = () => {
     const pathname = usePathname();
 
-  const isActive = (href: string) => {
-    return pathname === href || pathname.startsWith(href + "/");
+    const isActive = (href: string) => {
+    return  pathname.startsWith(href);
   }
     
 
@@ -41,7 +41,7 @@ const AdminMenu = () => {
       <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1 custom-scroll">
         <Link
           href={"/admin"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/dashboard") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/dashboard") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <LayoutDashboard className="w-5 h-5" />
           Dashboard
@@ -53,7 +53,7 @@ const AdminMenu = () => {
 
         <Link
           href={"/admin/students"}
-          className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/students") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <Users className="w-5 h-5" />
           Students
@@ -61,39 +61,39 @@ const AdminMenu = () => {
 
         <Link
           href={"/admin/teachers"}
-          className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/teachers") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <Presentation className="w-5 h-5" />
           Teachers
         </Link>
 
         <Link
-          href={"/"}
-          className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          href={"/admin/classes"}
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/classes") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <School className="w-5 h-5" />
           Classes
         </Link>
 
         <Link
-          href={"/"}
-          className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          href={"/admin/subjects"}
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/subjects") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <BookOpen className="w-5 h-5" />
           Subjects
         </Link>
 
         <Link
-          href={"/"}
-          className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          href={"/admin/attendance"}
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/attendance") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <CalendarCheck className="w-5 h-5" />
           Attendance
         </Link>
 
         <Link
-          href={"/"}
-          className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          href={"/admin/results"}
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive( "/admin/results") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <FileBarChart className="w-5 h-5" />
           Results
@@ -104,24 +104,24 @@ const AdminMenu = () => {
         </div>
 
         <Link
-          href={"/"}
-          className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          href={"/admin/fees"}
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/fees") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <CreditCard className="w-5 h-5" />
           Fees
         </Link>
 
         <Link
-          href={"/"}
-          className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          href={"/admin/parents"}
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/parents") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <UserPlus className="w-5 h-5" />
           Parents
         </Link>
 
         <Link
-          href={"/"}
-          className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          href={"/admin/settings"}
+          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/settings") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
         >
           <Settings className="w-5 h-5" />
           Settings

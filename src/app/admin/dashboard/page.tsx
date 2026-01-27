@@ -14,6 +14,15 @@ import {
 export default function Home() {
   return (
     <div className="space-y-6">
+      <div className="bg-linear-to-r from-indigo-600 to-blue-500 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
+        <div className="relative z-10">
+          <h1 className="text-2xl font-bold mb-2">Welcome back, Admin. 👋</h1>
+          <p className="text-indigo-100 max-w-xl">The performance of  <span className="font-semibold text-white">Students</span> this session is<span className="font-semibold text-white"> Very Impressive </span>.</p>
+        </div>
+        <div className="absolute right-0 bottom-0 opacity-10 transform translate-y-1/4 translate-x-1/4">
+          <i data-lucide="book-open" className="w-64 h-64"></i>
+        </div>
+      </div>
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -23,7 +32,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-slate-900 mt-1">2,450</h3>
             </div>
             <div className="p-2 bg-indigo-50 rounded-lg text-indigo-600">
-              <Users className="w-5 h-5"/>
+              <Users className="w-5 h-5" />
             </div>
           </div>
           <div className="mt-4 flex items-center text-sm">
@@ -45,7 +54,7 @@ export default function Home() {
           </div>
           <div className="mt-4 flex items-center text-sm">
             <span className="text-green-600 font-medium flex items-center gap-1">
-              <TrendingUp className="w-3 h-3"/> +2.1%
+              <TrendingUp className="w-3 h-3" /> +2.1%
             </span>
             <span className="text-slate-400 ml-2">vs last month</span>
           </div>
@@ -57,12 +66,12 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-slate-900 mt-1">94.2%</h3>
             </div>
             <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
-              <CalendarCheck className="w-5 h-5"/>
+              <CalendarCheck className="w-5 h-5" />
             </div>
           </div>
           <div className="mt-4 flex items-center text-sm">
             <span className="text-red-600 font-medium flex items-center gap-1">
-              <TrendingDown className="w-3 h-3"/> -0.8%
+              <TrendingDown className="w-3 h-3" /> -0.8%
             </span>
             <span className="text-slate-400 ml-2">vs yesterday</span>
           </div>
@@ -79,7 +88,7 @@ export default function Home() {
           </div>
           <div className="mt-4 flex items-center text-sm">
             <span className="text-green-600 font-medium flex items-center gap-1">
-              <TrendingUp className="w-3 h-3"/> +12%
+              <TrendingUp className="w-3 h-3" /> +12%
             </span>
             <span className="text-slate-400 ml-2">vs last term</span>
           </div>

@@ -1,172 +1,203 @@
-import { StudentRow, TeacherRow } from "./types";
+import { ClassRow, StudentRow, TeacherRow, SubjectCard } from "./types";
 
 export const students: StudentRow[] = [
   {
     id: "1",
     name: "Liam Anderson",
     studentId: "STU-001",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
     className: "Grade 3-A",
     age: "8 yrs",
     gender: "Male",
     status: "Active",
+    email: "liam.anderson@student.edu",
+    phone: "+234 802 345 1122",
+    address: "12 Maple Street, Ikeja, Lagos",
   },
   {
     id: "2",
     name: "Emma Johnson",
     studentId: "STU-002",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
     className: "Grade 4-B",
     age: "9 yrs",
     gender: "Female",
     status: "Active",
+    email: "emma.johnson@student.edu",
+    phone: "+234 805 998 6611",
+    address: "45 Sunrise Avenue, Gwarinpa, Abuja",
   },
   {
     id: "3",
     name: "Noah Williams",
     studentId: "STU-003",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
     className: "Grade 5-A",
     age: "10 yrs",
     gender: "Male",
     status: "Active",
+    email: "noah.williams@student.edu",
+    phone: "+234 701 554 9928",
+    address: "8 Unity Crescent, Lekki Phase 1, Lagos",
   },
   {
     id: "4",
     name: "Olivia Brown",
     studentId: "STU-004",
-    image:
-      "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c",
+    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c",
     className: "Grade 2-C",
     age: "7 yrs",
     gender: "Female",
     status: "Inactive",
+    email: "olivia.brown@student.edu",
+    phone: "+234 814 722 1155",
+    address: "33 Park Lane, Port Harcourt",
   },
   {
     id: "5",
     name: "James Wilson",
     studentId: "STU-005",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
     className: "Grade 6-A",
     age: "11 yrs",
     gender: "Male",
     status: "Active",
+    email: "james.wilson@student.edu",
+    phone: "+234 708 444 2277",
+    address: "19 Palm View Estate, Ibadan",
   },
   {
     id: "6",
     name: "Sophia Martinez",
     studentId: "STU-006",
-    image:
-      "https://images.unsplash.com/photo-1542206395-9feb3edaa68d",
+    image: "https://images.unsplash.com/photo-1542206395-9feb3edaa68d",
     className: "Grade 1-B",
     age: "6 yrs",
     gender: "Female",
     status: "Active",
+    email: "sophia.martinez@student.edu",
+    phone: "+234 802 781 9923",
+    address: "52 Harmony Street, Enugu",
   },
   {
     id: "7",
     name: "Benjamin Taylor",
     studentId: "STU-007",
-    image:
-      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce",
+    image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce",
     className: "Grade 4-A",
     age: "9 yrs",
     gender: "Male",
     status: "Inactive",
+    email: "benjamin.taylor@student.edu",
+    phone: "+234 817 665 4411",
+    address: "27 Coral Estate, Uyo",
   },
   {
     id: "8",
     name: "Ava Thomas",
     studentId: "STU-008",
-    image:
-      "https://images.unsplash.com/photo-1548142813-c348350df52b",
+    image: "https://images.unsplash.com/photo-1548142813-c348350df52b",
     className: "Grade 3-B",
     age: "8 yrs",
     gender: "Female",
     status: "Active",
+    email: "ava.thomas@student.edu",
+    phone: "+234 803 117 5533",
+    address: "6 Kings Road, Asaba",
   },
   {
     id: "9",
     name: "Lucas Moore",
     studentId: "STU-009",
-    image:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
     className: "Grade 5-B",
     age: "10 yrs",
     gender: "Male",
     status: "Active",
+    email: "lucas.moore@student.edu",
+    phone: "+234 809 441 9311",
+    address: "20 Cedar Close, Benin City",
   },
   {
     id: "10",
     name: "Mia Jackson",
     studentId: "STU-010",
-    image:
-      "https://images.unsplash.com/photo-1545992336-cbfdeeda2f20",
+    image: "https://images.unsplash.com/photo-1545992336-cbfdeeda2f20",
     className: "Grade 2-A",
     age: "7 yrs",
     gender: "Female",
     status: "Active",
+    email: "mia.jackson@student.edu",
+    phone: "+234 818 222 7400",
+    address: "18 Royal Gardens, Abeokuta",
   },
   {
     id: "11",
     name: "Ethan White",
     studentId: "STU-011",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
     className: "Grade 6-B",
     age: "11 yrs",
     gender: "Male",
     status: "Inactive",
+    email: "ethan.white@student.edu",
+    phone: "+234 812 509 8899",
+    address: "3 Blossom Street, Kaduna",
   },
   {
     id: "12",
     name: "Charlotte Harris",
     studentId: "STU-012",
-    image:
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c",
+    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c",
     className: "Grade 1-A",
     age: "6 yrs",
     gender: "Female",
     status: "Active",
+    email: "charlotte.harris@student.edu",
+    phone: "+234 706 841 2200",
+    address: "77 Queen’s Drive, Calabar",
   },
   {
     id: "13",
     name: "Daniel Clark",
     studentId: "STU-013",
-    image:
-      "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6",
+    image: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6",
     className: "Grade 4-C",
     age: "9 yrs",
     gender: "Male",
     status: "Active",
+    email: "daniel.clark@student.edu",
+    phone: "+234 815 944 0033",
+    address: "11 Temple Avenue, Owerri",
   },
   {
     id: "14",
     name: "Amelia Lewis",
     studentId: "STU-014",
-    image:
-      "https://images.unsplash.com/photo-1546967191-fdfb13ed6b1e",
+    image: "https://images.unsplash.com/photo-1546967191-fdfb13ed6b1e",
     className: "Grade 3-C",
     age: "8 yrs",
     gender: "Female",
     status: "Active",
+    email: "amelia.lewis@student.edu",
+    phone: "+234 803 755 6622",
+    address: "24 Lakeview Road, Ilorin",
   },
   {
     id: "15",
     name: "Henry Walker",
     studentId: "STU-015",
-    image:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
     className: "Grade 5-C",
     age: "10 yrs",
     gender: "Male",
     status: "Inactive",
+    email: "henry.walker@student.edu",
+    phone: "+234 809 334 9080",
+    address: "63 Orchard Lane, Jos",
   },
 ];
+
 
 
 export const teachers: TeacherRow[] = [
@@ -174,180 +205,368 @@ export const teachers: TeacherRow[] = [
     id: "1",
     name: "Michael Thompson",
     teacherId: "TCH-001",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
     department: "Mathematics",
     age: "38 years",
     gender: "Male",
     status: "Active",
-    class: '4B'
+    phone: "+1 (202) 555-0176",
+    class: "5B"
   },
   {
     id: "2",
     name: "Sarah Williams",
     teacherId: "TCH-002",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
     department: "English Language",
     age: "34 years",
     gender: "Female",
     status: "Active",
-    class: '4B'
+    phone: "+1 (303) 555-0149",
+    class: "2A"
   },
   {
     id: "3",
     name: "Daniel Robinson",
     teacherId: "TCH-003",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
     department: "Physics",
     age: "41 years",
     gender: "Male",
     status: "Active",
-    class: '4B'
+    phone: "+1 (415) 555-0194",
+    class: "6A"
   },
   {
     id: "4",
     name: "Emily Carter",
     teacherId: "TCH-004",
-    image:
-      "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c",
+    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c",
     department: "Biology",
     age: "36 years",
     gender: "Female",
     status: "Inactive",
-    class: '4B'
+    phone: "+1 (212) 555-0133",
+    class: "1B"
   },
   {
     id: "5",
     name: "James Wilson",
     teacherId: "TCH-005",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
     department: "Chemistry",
     age: "45 years",
     gender: "Male",
     status: "Active",
-    class: '4B'
+    phone: "+1 (415) 555-0128",
+    class: "3B"
   },
   {
     id: "6",
     name: "Olivia Martinez",
     teacherId: "TCH-006",
-    image:
-      "https://images.unsplash.com/photo-1542206395-9feb3edaa68d",
+    image: "https://images.unsplash.com/photo-1542206395-9feb3edaa68d",
     department: "Primary Education",
     age: "29 years",
     gender: "Female",
     status: "Active",
-    class: '4B'
+    phone: "+1 (646) 555-0172",
+    class: "4A"
   },
   {
     id: "7",
     name: "Benjamin Lee",
     teacherId: "TCH-007",
-    image:
-      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce",
+    image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce",
     department: "Geography",
     age: "39 years",
     gender: "Male",
     status: "Inactive",
-    class: '4B'
+    phone: "+1 (502) 555-0189",
+    class: "6B"
   },
   {
     id: "8",
     name: "Ava Hernandez",
     teacherId: "TCH-008",
-    image:
-      "https://images.unsplash.com/photo-1548142813-c348350df52b",
+    image: "https://images.unsplash.com/photo-1548142813-c348350df52b",
     department: "Fine Arts",
     age: "33 years",
     gender: "Female",
     status: "Active",
-    class: '4B'
+    phone: "+1 (708) 555-0164",
+    class: "2B"
   },
   {
     id: "9",
     name: "Lucas Moore",
     teacherId: "TCH-009",
-    image:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
     department: "Computer Science",
     age: "35 years",
     gender: "Male",
     status: "Active",
-    class: '4B'
+    phone: "+1 (405) 555-0157",
+    class: "5A"
   },
   {
     id: "10",
     name: "Mia Jackson",
     teacherId: "TCH-010",
-    image:
-      "https://images.unsplash.com/photo-1545992336-cbfdeeda2f20",
+    image: "https://images.unsplash.com/photo-1545992336-cbfdeeda2f20",
     department: "Home Economics",
     age: "42 years",
     gender: "Female",
     status: "Active",
-    class: '4B'
+    phone: "+1 (214) 555-0142",
+    class: "3A"
   },
   {
     id: "11",
     name: "Ethan White",
     teacherId: "TCH-011",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
     department: "Physical Education",
     age: "37 years",
     gender: "Male",
     status: "Inactive",
-    class: '4B'
+    phone: "+1 (509) 555-0121",
+    class: "1A"
   },
   {
     id: "12",
     name: "Charlotte Harris",
     teacherId: "TCH-012",
-    image:
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c",
+    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c",
     department: "Civic Education",
     age: "31 years",
     gender: "Female",
     status: "Active",
-    class: '4B'
+    phone: "+1 (720) 555-0182",
+    class: "6A"
   },
   {
     id: "13",
     name: "Daniel Clark",
     teacherId: "TCH-013",
-    image:
-      "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6",
+    image: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6",
     department: "Economics",
     age: "44 years",
     gender: "Male",
     status: "Active",
-    class: '4B'
+    phone: "+1 (513) 555-0178",
+    class: "4B"
   },
   {
     id: "14",
     name: "Amelia Lewis",
     teacherId: "TCH-014",
-    image:
-      "https://images.unsplash.com/photo-1546967191-fdfb13ed6b1e",
+    image: "https://images.unsplash.com/photo-1546967191-fdfb13ed6b1e",
     department: "Literature",
     age: "32 years",
     gender: "Female",
     status: "Active",
-    class: '4B'
+    phone: "+1 (325) 555-0139",
+    class: "2A"
   },
   {
     id: "15",
     name: "Henry Walker",
     teacherId: "TCH-015",
-    image:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
     department: "History",
     age: "46 years",
     gender: "Male",
     status: "Inactive",
-    class: '4B'
+    phone: "+1 (612) 555-0193",
+    class: "5B"
   },
 ];
+
+export const classes: ClassRow[] = [
+  {
+    id: "CLS-001",
+    name: "10B",
+    level: "Secondary Level",
+    teacher: "John Smith",
+    totalStudents: 28
+  },
+  {
+    id: "CLS-002",
+    name: "9A",
+    level: "Secondary Level",
+    teacher: "Emily Roberts",
+    totalStudents: 32
+  },
+  {
+    id: "CLS-003",
+    name: "8C",
+    level: "Secondary Level",
+    teacher: "Michael Johnson",
+    totalStudents: 27
+  },
+  {
+    id: "CLS-004",
+    name: "7B",
+    level: "Secondary Level",
+    teacher: "Sarah Thompson",
+    totalStudents: 30
+  },
+  {
+    id: "CLS-005",
+    name: "6A",
+    level: "Primary Level",
+    teacher: "Daniel Carter",
+    totalStudents: 33
+  },
+  {
+    id: "CLS-006",
+    name: "5B",
+    level: "Primary Level",
+    teacher: "Ava Martinez",
+    totalStudents: 22
+  },
+  {
+    id: "CLS-007",
+    name: "4C",
+    level: "Primary Level",
+    teacher: "Liam Anderson",
+    totalStudents: 25
+  },
+  {
+    id: "CLS-008",
+    name: "3A",
+    level: "Primary Level",
+    teacher: "Olivia Harris",
+    totalStudents: 35
+  },
+  {
+    id: "CLS-009",
+    name: "2B",
+    level: "Primary Level",
+    teacher: "Benjamin Lee",
+    totalStudents: 29
+  },
+  {
+    id: "CLS-010",
+    name: "1A",
+    level: "Primary Level",
+    teacher: "Sophia Walker",
+    totalStudents: 24
+  }
+];
+export const subjectsMock: SubjectCard[] = [
+  {
+    id: "sub-001",
+    name: "Social Studies",
+    schedule: "Tue, Fri • 2:00 PM",
+    icon: "Globe",
+    teacher: {
+      name: "Mr. David Thompson",
+      role: "Social Studies Teacher",
+      avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=200",
+    },
+  },
+  {
+    id: "sub-002",
+    name: "Mathematics",
+    schedule: "Mon, Thu • 10:00 AM",
+    icon: "Calculator",
+    teacher: {
+      name: "Mrs. Linda Okafor",
+      role: "Mathematics Teacher",
+      avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200",
+    },
+  },
+  {
+    id: "sub-003",
+    name: "English Language",
+    schedule: "Wed • 11:30 AM",
+    icon: "BookOpen",
+    teacher: {
+      name: "Mr. Samuel Wright",
+      role: "English Teacher",
+      avatar: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=200",
+    },
+  },
+  {
+    id: "sub-004",
+    name: "Basic Science",
+    schedule: "Tue, Thu • 1:00 PM",
+    icon: "FlaskRound",
+    teacher: {
+      name: "Ms. Grace Adeniyi",
+      role: "Science Teacher",
+      avatar: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=200",
+    },
+  },
+  {
+    id: "sub-005",
+    name: "Agricultural Science",
+    schedule: "Fri • 9:00 AM",
+    icon: "Leaf",
+    teacher: {
+      name: "Mr. Ibrahim Musa",
+      role: "Agricultural Science Teacher",
+      avatar: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=200",
+    },
+  },
+  {
+    id: "sub-006",
+    name: "Computer Studies",
+    schedule: "Mon, Wed • 12:00 PM",
+    icon: "Computer",
+    teacher: {
+      name: "Mrs. Adaeze Nwosu",
+      role: "ICT Instructor",
+      avatar: "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=200",
+    },
+  },
+  {
+    id: "sub-007",
+    name: "Physical & Health Education",
+    schedule: "Tue • 3:00 PM",
+    icon: "Dumbbell",
+    teacher: {
+      name: "Coach Henry Adams",
+      role: "PHE Instructor",
+      avatar: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200",
+    },
+  },
+  {
+    id: "sub-008",
+    name: "Home Economics",
+    schedule: "Thu • 11:00 AM",
+    icon: "Utensils",
+    teacher: {
+      name: "Mrs. Teniola Bello",
+      role: "Home Economics Teacher",
+      avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200",
+    },
+  },
+  {
+    id: "sub-009",
+    name: "Fine Arts",
+    schedule: "Wed • 2:00 PM",
+    icon: "Palette",
+    teacher: {
+      name: "Mr. Julian Peters",
+      role: "Fine Arts Teacher",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200",
+    },
+  },
+  {
+    id: "sub-010",
+    name: "Civic Education",
+    schedule: "Fri • 8:00 AM",
+    icon: "ShieldCheck",
+    teacher: {
+      name: "Mrs. Esther John",
+      role: "Civic Education Teacher",
+      avatar: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=200",
+    },
+  },
+];
+
+
+

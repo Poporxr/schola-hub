@@ -16,7 +16,7 @@ export default function page() {
                             <Users className="w-6 h-6 text-blue-600" />
                         </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">1,248</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">248</h3>
                     <p className="text-sm text-gray-500">Total Teachers</p>
                 </div>
 
@@ -26,7 +26,7 @@ export default function page() {
                             <UserCheck className="w-6 h-6 text-green-600" />
                         </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">1,186</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">186</h3>
                     <p className="text-sm text-gray-500">Active Teachers</p>
                 </div>
 
@@ -97,7 +97,7 @@ export default function page() {
                                             <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Student" className="w-10 h-10 rounded-full object-cover" width={20} height={20} />
                                             <div>
                                                 <p className="text-sm font-semibold text-gray-900">{teacher.name}</p>
-                                                <p className="text-xs text-gray-500">{teacher.teacherId}</p>
+                                                <p className="text-[10px] text-gray-500">{teacher.phone}</p>
                                             </div>
                                         </div>
                                     </td>
@@ -108,7 +108,7 @@ export default function page() {
                                         <span className={`px-3 py-1 text-xs font-semibold ${teacher.status === "Active" ? 'text-green-700 bg-green-100 ' : "text-red-700 bg-red-100 " }rounded-full`} >{teacher.status}</span>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <Link href={`/admin/students/${teacher.id}`} className="text-blue-600 hover:text-blue-700 text-sm font-medium">View Teacher</Link>
+                                        <Link href={`/admin/teachers/${teacher.id}`} className="text-blue-600 hover:text-blue-700 text-sm font-medium">View Teacher</Link>
                                     </td>
                                 </tr>
                             ))}
