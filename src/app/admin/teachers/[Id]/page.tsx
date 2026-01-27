@@ -7,7 +7,7 @@ const Page = () => {
             <BackButton />
             <div className="pb-8 pt-5">
                 <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
-                    <div className="flex items-start gap-6">
+                    <div className="md:flex md:items-start gap-6">
                         <Image src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Teacher" className="w-32 h-32 rounded-full object-cover border-4 border-purple-100" width={50} height={50} />
                             <div className="flex-1">
                                 <div className="flex items-start justify-between mb-4">
@@ -17,7 +17,7 @@ const Page = () => {
                                         <span className="px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full">Active Teacher</span>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-4 gap-6">
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                                     <div>
                                         <p className="text-xs text-gray-500 mb-1">Subject</p>
                                         <p className="text-sm font-semibold text-gray-900">Mathematics</p>

@@ -8,7 +8,7 @@ import {
     Landmark,
 } from "lucide-react";
 
-type Tab = "personal" | "subjects" | "results" | "attendance";
+type Tab = "personal" | "subjects" | "results";
 
 const StudentTabs = () => {
     const [activeTab, setActiveTab] = useState<Tab>("personal");
@@ -31,7 +31,6 @@ const StudentTabs = () => {
                                 {tab === "personal" && "Personal Info"}
                                 {tab === "subjects" && "Subjects"}
                                 {tab === "results" && "Results"}
-                                {tab === "attendance" && "Attendance"}
                             </button>
                         )
                     )}
@@ -125,16 +124,6 @@ const StudentTabs = () => {
                     <Result subject="History" score="90%" grade="A" />
                 </div>
             )}
-
-            {/* Attendance */}
-            {activeTab === "attendance" && (
-                <div className="p-6 grid lg:grid-cols-4 md:grid-cols-4 grid-cols-2 gap-4">
-                    <Stat value="168" label="Present Days" color="text-green-600" />
-                    <Stat value="8" label="Absent Days" color="text-red-600" />
-                    <Stat value="4" label="Late Arrivals" color="text-yellow-600" />
-                    <Stat value="94%" label="Attendance Rate" color="text-blue-600" />
-                </div>
-            )}
         </div>
     );
 };
@@ -189,20 +178,5 @@ const Result = ({
                 {grade}
             </span>
         </div>
-    </div>
-);
-
-const Stat = ({
-    value,
-    label,
-    color,
-}: {
-    value: string;
-    label: string;
-    color: string;
-}) => (
-    <div className="text-center p-4 bg-gray-50 rounded-lg">
-        <p className={`text-2xl font-bold ${color}`}>{value}</p>
-        <p className="text-xs text-gray-600 mt-1">{label}</p>
     </div>
 );

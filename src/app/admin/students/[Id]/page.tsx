@@ -8,7 +8,7 @@ const Page = async () => {
         <div className="">
             <BackButton />
 
-            <div className="p-8">
+            <div className="">
                 {/* Profile Header */}
                 <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
                     <div className="flex flex-col justify-center gap-6">

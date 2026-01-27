@@ -4,11 +4,13 @@ import Link from "next/link";
 
 const Page = () => {
     return (
-        <div className="space-y-6 p-5">
+        <div className="space-y-6 pt-2">
             <div className="flex justify-between items-center ">
                 <h2 className="text-2xl font-bold text-slate-800">Classes</h2>
-                <button className="px-4 flex justify-between gap-2 items-center py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">
-                    <Plus className="w-8 h-6"/>Add Class</button>
+                        <button className="flex items-center gap-2 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                            <Plus className="w-4 h-4" />
+                            <span className="text-sm font-medium">Add Teacher</span>
+                        </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {classes.map((classItem) => (

@@ -1,5 +1,4 @@
-'use client'
-
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -10,39 +9,65 @@ import {
   Presentation,
   School,
   BookOpen,
-  CalendarCheck,
   FileBarChart,
   CreditCard,
   UserPlus,
   Settings,
   LogOut,
+  X,
+  PanelRightOpen,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-const AdminMenu = () => {
-    const pathname = usePathname();
+type AdminMenuProps = {
+  open: boolean;
+  onClose: () => void;
+};
 
-    const isActive = (href: string) => {
-    return  pathname.startsWith(href);
-  }
-    
+const AdminMenu = ({ open, onClose }: AdminMenuProps) => {
+  const pathname = usePathname();
 
+  const isActive = (href: string) => pathname.startsWith(href);
+
+  // Close sidebar on navigation (mobile only)
+  const closeOnMobile = () => {
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      onClose();
+    }
+  };
+
+  const linkClass = (href: string) =>
+    `nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-50 hover:text-slate-900 transition-colors ${
+      isActive(href) ? "text-indigo-600 font-semibold bg-indigo-50" : "text-slate-600"
+    }`;
 
   return (
-    <aside className="w-64 bg-white border-r border-slate-200 shrink-0 flex flex-col h-screen fixed left-0 top-0 z-20 lg:static transition-transform duration-300 transform -translate-x-full lg:translate-x-0">
-      
-      <div className="h-16 flex items-center px-6 border-b border-slate-100">
+    <aside
+      className={[
+        "w-64 bg-white border-r border-slate-200 shrink-0 flex flex-col h-screen",
+        "fixed left-0 top-0 z-20 lg:static",
+        "transition-transform duration-300 transform",
+        open ? "translate-x-0" : "-translate-x-full",
+        "lg:translate-x-0",
+      ].join(" ")}
+    >
+      <div className="h-16 flex items-center justify-between px-2 border-b border-slate-100">
         <div className="flex items-center gap-2 text-indigo-600 font-bold text-xl">
           <GraduationCap className="w-8 h-8" />
           <span>Schola | Hub</span>
         </div>
+
+        <button
+          onClick={onClose}
+          className="lg:hidden p-2 rounded-lg text-slate-500 hover:bg-slate-100"
+          aria-label="Close sidebar"
+        >
+          <PanelRightOpen className="w-5 h-5" />
+        </button>
       </div>
 
       <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1 custom-scroll">
-        <Link
-          href={"/admin"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/dashboard") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
-        >
+        <Link href="/admin" onClick={closeOnMobile} className={linkClass("/admin/dashboard")}>
           <LayoutDashboard className="w-5 h-5" />
           Dashboard
         </Link>
@@ -52,48 +77,45 @@ const AdminMenu = () => {
         </div>
 
         <Link
-          href={"/admin/students"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/students") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
+          href="/admin/students"
+          onClick={closeOnMobile}
+          className={linkClass("/admin/students")}
         >
           <Users className="w-5 h-5" />
           Students
         </Link>
 
         <Link
-          href={"/admin/teachers"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/teachers") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
+          href="/admin/teachers"
+          onClick={closeOnMobile}
+          className={linkClass("/admin/teachers")}
         >
           <Presentation className="w-5 h-5" />
           Teachers
         </Link>
 
         <Link
-          href={"/admin/classes"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/classes") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
+          href="/admin/classes"
+          onClick={closeOnMobile}
+          className={linkClass("/admin/classes")}
         >
           <School className="w-5 h-5" />
           Classes
         </Link>
 
         <Link
-          href={"/admin/subjects"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/subjects") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
+          href="/admin/subjects"
+          onClick={closeOnMobile}
+          className={linkClass("/admin/subjects")}
         >
           <BookOpen className="w-5 h-5" />
           Subjects
         </Link>
 
         <Link
-          href={"/admin/attendance"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/attendance") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
-        >
-          <CalendarCheck className="w-5 h-5" />
-          Attendance
-        </Link>
-
-        <Link
-          href={"/admin/results"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive( "/admin/results") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
+          href="/admin/results"
+          onClick={closeOnMobile}
+          className={linkClass("/admin/results")}
         >
           <FileBarChart className="w-5 h-5" />
           Results
@@ -104,24 +126,27 @@ const AdminMenu = () => {
         </div>
 
         <Link
-          href={"/admin/fees"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/fees") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
+          href="/admin/tuition"
+          onClick={closeOnMobile}
+          className={linkClass("/admin/tuition")}
         >
           <CreditCard className="w-5 h-5" />
-          Fees
+          Tuition & Fees
         </Link>
 
         <Link
-          href={"/admin/parents"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/parents") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
+          href="/admin/parents"
+          onClick={closeOnMobile}
+          className={linkClass("/admin/parents")}
         >
           <UserPlus className="w-5 h-5" />
           Parents
         </Link>
 
         <Link
-          href={"/admin/settings"}
-          className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium  hover:bg-slate-50 hover:text-slate-900 transition-colors ${isActive("/admin/settings") ? "text-indigo-600 font-semibold  bg-indigo-50" : "text-slate-600"}`}
+          href="/admin/settings"
+          onClick={closeOnMobile}
+          className={linkClass("/admin/settings")}
         >
           <Settings className="w-5 h-5" />
           Settings
@@ -143,7 +168,7 @@ const AdminMenu = () => {
             </p>
             <p className="text-xs text-slate-500 truncate">Administrator</p>
           </div>
-          <Link href={"/"} className="text-slate-400 hover:text-slate-600">
+          <Link href="/" onClick={closeOnMobile} className="text-slate-400 hover:text-slate-600">
             <LogOut className="w-5 h-5" />
           </Link>
         </div>
