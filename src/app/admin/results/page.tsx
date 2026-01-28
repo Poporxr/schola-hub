@@ -1,5 +1,9 @@
+import ClassInsights from "@/components/ClassInsights";
+import GradeBreakdown from "@/components/GradeBreakdown";
+import { resultsMock } from "@/utils/students";
 import { ArrowUp, ArrowUpDown, Award, BarChart3, CheckCircle, CheckCircle2, Download, Lightbulb, PieChart, Printer, Search, Send, Sliders, Star, TrendingUp, Trophy, Upload, Users } from "lucide-react";
 import Image from "next/image"
+import Link from "next/link";
 
 const Page = () => {
     return (
@@ -48,7 +52,7 @@ const Page = () => {
                             <label className="block text-sm font-medium text-slate-700 mb-2">Class</label>
                             <select className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm">
                                 <option>All Classes</option>
-                                <option selected>Grade 3A</option>
+                                <option>Grade 3A</option>
                                 <option>Grade 3B</option>
                                 <option>Grade 4A</option>
                             </select>
@@ -58,7 +62,7 @@ const Page = () => {
                             <label className="block text-sm font-medium text-slate-700 mb-2">Term / Semester</label>
                             <select className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm">
                                 <option>First Term</option>
-                                <option selected>Second Term</option>
+                                <option>Second Term</option>
                                 <option>Third Term</option>
                             </select>
                         </div>
@@ -186,300 +190,68 @@ const Page = () => {
                             </thead>
                             {/*<!-- Table body with student records --> */}
                             <tbody className="divide-y divide-slate-100 text-sm">
-                                {/*<!-- Top student - Liam Anderson */}
-                                <tr className="hover:bg-purple-50/50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-3">
-                                            <Image src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student" className="w-10 h-10 rounded-full border-2 border-amber-200" width={10} height={10} />
-                                            <div>
-                                                <span className="font-semibold text-slate-900">Liam Anderson</span>
-                                                <div className="flex items-center gap-1 mt-0.5">
-                                                    <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
-                                                    <span className="text-xs text-amber-600 font-medium">Top Student</span>
-                                                </div>
+                                {resultsMock.map((resultItem) => (
+                                    <tr className="hover:bg-purple-50/50 transition-colors" key={resultItem.id}>
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-3">
+                                                <Image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student" className="w-10 h-10 rounded-full border-2 border-slate-200" width={10} height={10} />
+                                                <span className="font-semibold text-slate-900">{resultItem.name}</span>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 font-mono text-xs text-slate-600">STU-006</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">95</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">98</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">100</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">97</td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="text-lg font-bold text-purple-600">97.5</span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="grade-badge inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-linear-to-r from-emerald-500 to-emerald-600 text-white shadow-md">
-                                            A+
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-linear-to-br from-amber-400 to-amber-500 text-white font-bold text-sm shadow-md">
-                                            1
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <button className="text-purple-600 hover:text-purple-700 font-medium text-sm">View</button>
-                                            <button className="text-slate-400 hover:text-slate-600">
-                                                <Printer className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                {/*<!-- Second student - Emma Wilson -->*/}
-                                <tr className="hover:bg-purple-50/50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-3">
-                                            <Image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student" className="w-10 h-10 rounded-full border-2 border-slate-200" width={10} height={10} />
-                                            <span className="font-semibold text-slate-900">Emma Wilson</span>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 font-mono text-xs text-slate-600">STU-012</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">92</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">94</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">96</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">93</td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="text-lg font-bold text-purple-600">93.8</span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="grade-badge inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-linear-to-r from-emerald-500 to-emerald-600 text-white shadow-md">
-                                            A+
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-linear-to-br from-slate-300 to-slate-400 text-slate-700 font-bold text-sm shadow-md">
-                                            2
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <button className="text-purple-600 hover:text-purple-700 font-medium text-sm">View</button>
-                                            <button className="text-slate-400 hover:text-slate-600">
-                                                <Printer className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                {/*<!-- Third student - Noah Martinez --> */}
-                                <tr className="hover:bg-purple-50/50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-3">
-                                            <Image src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student" className="w-10 h-10 rounded-full border-2 border-slate-200" width={10} height={10} />
-                                            <span className="font-semibold text-slate-900">Noah Martinez</span>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 font-mono text-xs text-slate-600">STU-018</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">88</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">90</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">87</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">91</td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="text-lg font-bold text-purple-600">89.0</span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="grade-badge inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-linear-to-r from-blue-500 to-blue-600 text-white shadow-md">
-                                            A
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-linear-to-br from-orange-300 to-orange-400 text-white font-bold text-sm shadow-md">
-                                            3
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <button className="text-purple-600 hover:text-purple-700 font-medium text-sm">View</button>
-                                            <button className="text-slate-400 hover:text-slate-600">
-                                                <Printer className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                {/* <!-- Fourth student - Olivia Brown --> */}
-                                <tr className="hover:bg-purple-50/50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-3">
-                                            <Image src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student" className="w-10 h-10 rounded-full border-2 border-slate-200" width={10} height={10} />
-                                            <span className="font-semibold text-slate-900">Olivia Brown</span>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 font-mono text-xs text-slate-600">STU-024</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">85</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">87</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">89</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">86</td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="text-lg font-bold text-purple-600">86.8</span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="grade-badge inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-linear-to-r from-indigo-500 to-indigo-600 text-white shadow-md">
-                                            B+
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-200 text-slate-700 font-bold text-sm">
-                                            4
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <button className="text-purple-600 hover:text-purple-700 font-medium text-sm">View</button>
-                                            <button className="text-slate-400 hover:text-slate-600">
-                                                <Printer className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                {/* Fifth student - Ethan Davis --> */}
-                                <tr className="hover:bg-purple-50/50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-3">
-                                            <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Student" className="w-10 h-10 rounded-full border-2 border-slate-200" width={10} height={10} />
-                                            <span className="font-semibold text-slate-900">Ethan Davis</span>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 font-mono text-xs text-slate-600">STU-031</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">82</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">84</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">86</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-slate-900">83</td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="text-lg font-bold text-purple-600">83.8</span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="grade-badge inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-linear-to-r from-cyan-500 to-cyan-600 text-white shadow-md">
-                                            B
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-200 text-slate-700 font-bold text-sm">
-                                            5
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <button className="text-purple-600 hover:text-purple-700 font-medium text-sm">View</button>
-                                            <button className="text-slate-400 hover:text-slate-600">
-                                                <Printer className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                        <td className="px-6 py-4 font-mono text-xs text-slate-600">{resultItem.studentId}</td>
+                                        <td className="px-6 py-4 text-center font-semibold text-slate-900">{resultItem.ca1}</td>
+                                        <td className="px-6 py-4 text-center font-semibold text-slate-900">{resultItem.ca2}</td>
+                                        <td className="px-6 py-4 text-center font-semibold text-slate-900">{resultItem.project}</td>
+                                        <td className="px-6 py-4 text-center font-semibold text-slate-900">{resultItem.exam}</td>
+                                        <td className="px-6 py-4 text-center">
+                                            <span className="text-lg font-bold text-purple-600">{resultItem.average}</span>
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <span className={`grade-badge inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-linear-to-r from-emerald-500 to-emerald-600 text-white shadow-md`}>
+                                               {resultItem.grade}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-linear-to-br from-slate-300 to-slate-400 text-slate-700 font-bold text-sm shadow-md">
+                                                {resultItem.position}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <Link href={`/admin/results/${resultItem.studentId}`} className="text-purple-600 hover:text-purple-700 font-medium text-sm">View</Link>
+                                                <button className="text-slate-400 hover:text-slate-600">
+                                                    <Printer className="w-4 h-4" />
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>
                 </div>
-                        {/* Score distribution chart card */}
-                        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                            <div className="flex items-center justify-between mb-4">
-                                <h3 className="font-bold text-slate-900">Score Distribution</h3>
-                                <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
-                                    <BarChart3 className="w-4 h-4 text-purple-600" />
-                                </div>
-                            </div>
-                            {/* Chart container with fixed height */}
-                            <div className="h-64 overflow-hidden">
-                                <canvas id="scoreDistributionChart"></canvas>
-                            </div>
+                {/* Score distribution chart card */}
+                <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div className="flex items-center justify-between mb-4">
+                        <h3 className="font-bold text-slate-900">Score Distribution</h3>
+                        <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+                            <BarChart3 className="w-4 h-4 text-purple-600" />
                         </div>
+                    </div>
+                    {/* Chart container with fixed height */}
+                    <div className="h-64 overflow-hidden">
+                        <canvas id="scoreDistributionChart"></canvas>
+                    </div>
+                </div>
 
                 {  /* Main results table and analytics section --*/}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-                        {/* Grade breakdown card */}
-                        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                            <div className="flex items-center justify-between mb-4">
-                                <h3 className="font-bold text-slate-900">Grade Breakdown</h3>
-                                <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center">
-                                    <PieChart className="w-4 h-4 text-indigo-600" />
-                                </div>
-                            </div>
-                            {/* Grade distribution with progress bars */}
-                            <div className="space-y-4">
-                                {/* A+ grade --> */}
-                                <div>
-                                    <div className="flex items-center justify-between text-sm mb-2">
-                                        <div className="flex items-center gap-2">
-                                            <span className="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-emerald-100 text-emerald-700">A+</span>
-                                            <span className="text-slate-600">90-100</span>
-                                        </div>
-                                        <span className="font-bold text-slate-900">12 students</span>
-                                    </div>
-                                    <div className="w-full bg-slate-100 rounded-full h-2.5">
-                                        <div className="bg-linear-to-r from-emerald-500 to-emerald-600 h-2.5 rounded-full shadow-sm"></div>
-                                    </div>
-                                </div>
-                                {/*<!-- A grade --> */}
-                                <div>
-                                    <div className="flex items-center justify-between text-sm mb-2">
-                                        <div className="flex items-center gap-2">
-                                            <span className="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-blue-100 text-blue-700">A</span>
-                                            <span className="text-slate-600">80-89</span>
-                                        </div>
-                                        <span className="font-bold text-slate-900">9 students</span>
-                                    </div>
-                                    <div className="w-full bg-slate-100 rounded-full h-2.5">
-                                        <div className="bg-linear-to-r from-blue-500 to-blue-600 h-2.5 rounded-full shadow-sm"></div>
-                                    </div>
-                                </div>
-                                {/* <!-- B grade -->*/}
-                                <div>
-                                    <div className="flex items-center justify-between text-sm mb-2">
-                                        <div className="flex items-center gap-2">
-                                            <span className="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-indigo-100 text-indigo-700">B</span>
-                                            <span className="text-slate-600">70-79</span>
-                                        </div>
-                                        <span className="font-bold text-slate-900">5 students</span>
-                                    </div>
-                                    <div className="w-full bg-slate-100 rounded-full h-2.5">
-                                        <div className="bg-linear-to-r from-indigo-500 to-indigo-600 h-2.5 rounded-full shadow-sm"></div>
-                                    </div>
-                                </div>
-                                {/* <!-- C grade --> */}
-                                <div>
-                                    <div className="flex items-center justify-between text-sm mb-2">
-                                        <div className="flex items-center gap-2">
-                                            <span className="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-amber-100 text-amber-700">C</span>
-                                            <span className="text-slate-600">60-69</span>
-                                        </div>
-                                        <span className="font-bold text-slate-900">2 students</span>
-                                    </div>
-                                    <div className="w-full bg-slate-100 rounded-full h-2.5">
-                                        <div className="bg-linear-to-r from-amber-500 to-amber-600 h-2.5 rounded-full shadow-sm"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    {/* Grade breakdown card */}
+                    <GradeBreakdown />
 
-                        {/*<!-- Class insights card --> */}
-                        <div className="bg-linear-to-br from-purple-50 to-indigo-50 rounded-xl border border-purple-100 p-6">
-                            <div className="flex items-center gap-2 mb-4">
-                                <div className="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center">
-                                    <Lightbulb className="w-4 h-4 text-white" />
-                                </div>
-                                <h3 className="font-bold text-slate-900">Class Insights</h3>
-                            </div>
-                            <div className="space-y-3 text-sm">
-                                <div className="flex items-start gap-2">
-                                    <CheckCircle className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-                                    <p className="text-slate-700">Class performance improved by <span className="font-bold text-purple-700">2.3%</span> this term</p>
-                                </div>
-                                <div className="flex items-start gap-2">
-                                    <TrendingUp className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
-                                    <p className="text-slate-700">Mathematics shows strongest improvement</p>
-                                </div>
-                                <div className="flex items-start gap-2">
-                                    <Users className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
-                                    <p className="text-slate-700"><span className="font-bold text-purple-700">2 students</span> need additional support</p>
-                                </div>
-                            </div>
-                        </div>
+                    {/*<!-- Class insights card --> */}
+                    <ClassInsights />
                 </div>
 
             </div>
