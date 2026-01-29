@@ -1,4 +1,5 @@
-import { ClassRow, StudentRow, TeacherRow, SubjectCard, ResultRow, SubjectBreakdownRow } from "./types";
+import { useMemo } from "react";
+import { ClassRow, StudentRow, TeacherRow, SubjectCard, ResultRow, SubjectBreakdownRow, ParentRow, FeeStructure, ClassAssignment } from "./types";
 
 export const students: StudentRow[] = [
   {
@@ -816,5 +817,113 @@ export const subjectBreakdown: SubjectBreakdownRow[] = [
   },
 ];
 
+
+
+export const parentsMock: ParentRow[] = [
+  {
+    id: "0249448",
+    name: "Mr. David Okonkwo",
+    location: "Lagos, Nigeria",
+    avatar:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    phone: "+234 801 234 5678",
+    email: "david.okonkwo@email.com",
+    students: {
+      count: 2,
+      summary: "2 Students (JSS1, SSS2)",
+      avatars: [
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64&q=80",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64&q=80",
+      ],
+    },
+    status: "Owing",
+    balance: { amount: 45000, label: "Due now" },
+    lastPayment: "Oct 24, 2023",
+  },
+  {
+    id: "0912331",
+    name: "Mrs. Sarah Adebayo",
+    location: "Abuja, Nigeria",
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    phone: "+234 809 876 5432",
+    email: "sarah.adebayo@email.com",
+    students: {
+      count: 1,
+      summary: "1 Student (Grade 4)",
+      avatars: [
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=64&h=64&q=80",
+      ],
+    },
+    status: "Paid",
+    balance: { amount: 0, label: "due" },
+    lastPayment: "Nov 02, 2023",
+  },
+];
+
+export const feeStructures: FeeStructure[] = [
+      {
+        id: "fs1",
+        name: "JSS Term 1 Fees",
+        term: "1st Term",
+        total: 185000,
+        status: "Active",
+        createdBy: "Admin",
+        items: [
+          { name: "Tuition Fee", amount: 120000 },
+          { name: "Development Levy", amount: 20000 },
+          { name: "Books & Materials", amount: 35000 },
+          { name: "Medical", amount: 5000 },
+          { name: "PTA Levy", amount: 5000 },
+          { name: "Uniform", amount: 25000, optional: true },
+        ],
+      },
+      {
+        id: "fs2",
+        name: "SSS Term 1 Fees",
+        term: "1st Term",
+        total: 210000,
+        status: "Active",
+        createdBy: "Admin",
+        items: [
+          { name: "Tuition Fee", amount: 150000 },
+          { name: "Development Levy", amount: 25000 },
+          { name: "Books & Materials", amount: 30000 },
+          { name: "Medical", amount: 5000 },
+        ],
+      },
+      {
+        id: "fs3",
+        name: "Primary Term 1 Fees",
+        term: "1st Term",
+        total: 120000,
+        status: "Draft",
+        createdBy: "Admin",
+        items: [{ name: "Tuition Fee", amount: 120000 }],
+      },
+    ]
+  
+export const assignments: ClassAssignment[] = [
+      {
+        id: "a1",
+        className: "JSS 1A",
+        structureName: "JSS Term 1 Fees",
+        students: 32,
+        expected: 5920000,
+        collected: 4500000,
+        outstanding: 1420000,
+        progress: 76,
+      },
+      {
+        id: "a2",
+        className: "JSS 1B",
+        structureName: "JSS Term 1 Fees",
+        students: 30,
+        expected: 5550000,
+        collected: 5000000,
+        outstanding: 550000,
+        progress: 90,
+      },
+    ]
 
 

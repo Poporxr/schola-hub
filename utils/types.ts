@@ -76,3 +76,43 @@ export type SubjectBreakdownRow = {
     status: string;     // perf-excellent | perf-good, etc (CSS hook)
   };
 };
+export type ParentRow = {
+  id: string; // used for /admin/parents/${id}
+  name: string;
+  location: string;
+  avatar?: string; // optional (if no avatar you can show initials)
+  initials?: string; // optional
+  phone: string;
+  email: string;
+  students: {
+    count: number;
+    summary: string; // e.g. "2 Students (JSS1, SSS2)"
+    avatars: string[]; // student thumbnails
+  };
+  status: "Owing" | "Paid" | "Partial";
+  balance: {
+    amount: number; // store raw number
+    label?: string; // "Due now" / "Remaining"
+  };
+  lastPayment: string; // "Oct 24, 2023"
+};
+export type FeeStructure = {
+  id: string;
+  name: string;
+  term: string;
+  total: number;
+  status: "Active" | "Draft";
+  createdBy: string;
+  items: { name: string; amount: number; optional?: boolean }[];
+};
+
+export type ClassAssignment = {
+  id: string;
+  className: string;
+  structureName: string;
+  students: number;
+  expected: number;
+  collected: number;
+  outstanding: number;
+  progress: number; // 0-100
+};

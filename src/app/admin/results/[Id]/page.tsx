@@ -6,6 +6,7 @@ import TeacherResultRemark from "@/components/TeacherResultRemark";
 import { subjectBreakdown } from "@/utils/students";
 import { Calendar, Download, Hash, Printer, School, Subscript } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -39,10 +40,10 @@ const Page = () => {
                     </div>
                     {/* Action Buttons */}
                     <div className="flex items-center gap-3">
-                        <button className="px-4 py-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white rounded-lg text-sm font-medium hover:bg-white/30 transition-colors flex items-center gap-2">
+                        <Link href={`/print/${3394}`} className="px-4 py-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white rounded-lg text-sm font-medium hover:bg-white/30 transition-colors flex items-center gap-2">
                             <Printer className="w-4 h-4" />
                             Print Result
-                        </button>
+                        </Link>
                         <button className="px-4 py-2 bg-white text-purple-700 rounded-lg text-sm font-medium hover:bg-white/90 transition-colors shadow-lg flex items-center gap-2">
                             <Download className="w-4 h-4" />
                             Download PDF
