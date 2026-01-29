@@ -14,7 +14,6 @@ import {
   UserPlus,
   Settings,
   LogOut,
-  X,
   PanelRightOpen,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
