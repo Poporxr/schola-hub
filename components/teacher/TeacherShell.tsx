@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import StudentMenu from "./StudentMenu";
-import StudentNav from "./StudentNav";
+import TeacherMenu from "./TeacherMenu";
+import TeacherNav from "./TeacherNav";
 
-export default function StudentShell({ children }: { children: React.ReactNode }) {
+
+export default function TeacherShell({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Close on ESC
@@ -19,7 +20,7 @@ export default function StudentShell({ children }: { children: React.ReactNode }
   return (
     <div className="flex min-h-screen">
       {/* Sidebar */}
-      < StudentMenu
+      < TeacherMenu
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
       />
@@ -35,7 +36,7 @@ export default function StudentShell({ children }: { children: React.ReactNode }
 
       {/* Main */}
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden h-screen">
-        <StudentNav onToggleSidebar={() => setSidebarOpen(v => !v)} />
+        <TeacherNav onToggleSidebar={() => setSidebarOpen(v => !v)} />
         <div className="flex-1 overflow-y-auto p-4 custom-scroll bg-slate-50">
           {children}
         </div>

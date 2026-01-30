@@ -116,3 +116,19 @@ export type ClassAssignment = {
   outstanding: number;
   progress: number; // 0-100
 };
+
+export type ScheduleTone = "indigo" | "orange" | "green";
+export type DotTone = "red" | "blue" | "green";
+export type ScheduleItem = {
+  time: string;
+  title: string;
+  meta: string;
+  meridiem: string;
+  tone: ScheduleTone
+};
+
+export type NoticeItem = {
+  from: string;
+  message: string;
+  dot: DotTone;
+};

@@ -20,7 +20,7 @@ export default function CreateFeeStructureModal({ open, onClose }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col m-4">
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col m-4 overflow-auto">
         <div className="p-5 border-b border-slate-200 flex items-center justify-between">
           <h3 className="text-lg font-bold text-slate-900">Create Fee Structure</h3>
           <button onClick={onClose} className="text-slate-400 hover:text-slate-600">

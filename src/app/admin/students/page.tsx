@@ -1,9 +1,18 @@
 import Pagination from "@/components/Pagination";
-import { CalendarCheck, Plus, Search, UserCheck, UserPlus, Users } from "lucide-react";
+import { CalendarCheck, Plus, Search, User2, UserCheck, UserPlus, Users } from "lucide-react";
 import Image from "next/image";
 import { StudentRow } from "@/utils/types";
-import { students } from "@/utils/students";
+import { classes, students } from "@/utils/students";
 import Link from "next/link";
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 export default function page() {
     return (
@@ -33,21 +42,21 @@ export default function page() {
                 <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <div className="flex items-center justify-between mb-4">
                         <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                            <UserPlus className="w-6 h-6 text-purple-600" />
+                            <User2 className="w-6 h-6 text-purple-600" />
                         </div>
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-1">48</h3>
-                    <p className="text-sm text-gray-500">New This Month</p>
+                    <p className="text-sm text-gray-500">Girls</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <div className="flex items-center justify-between mb-4">
                         <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                            <CalendarCheck className="w-6 h-6 text-orange-600" />
+                            <User2 className="w-6 h-6 text-orange-600" />
                         </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">94%</h3>
-                    <p className="text-sm text-gray-500">Attendance Rate</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">94</h3>
+                    <p className="text-sm text-gray-500">Boys</p>
                 </div>
             </div>
 
@@ -66,14 +75,20 @@ export default function page() {
                             <input type="text" placeholder="Search students..." className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
                             <Search className="w-5 h-5 text-gray-400 absolute left-3 top-2.5" />
                         </div>
-                        <select className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option>All Classes</option>
-                            <option>Grade 1</option>
-                            <option>Grade 2</option>
-                            <option>Grade 3</option>
-                            <option>Grade 4</option>
-                            <option>Grade 5</option>
-                        </select>
+                        <Select>
+                            <SelectTrigger className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <SelectValue placeholder="All Classes" />
+                            </SelectTrigger>
+                            <SelectContent className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+                                <SelectGroup >
+                                    {classes.map((classItem) => {
+                                        return (
+                                            <SelectItem key={classItem.id} className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-black" value={classItem.id}>{`Class ${classItem.name}`}</SelectItem>
+                                        )
+                                    })}
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
                     </div>
                 </div>
 
@@ -105,7 +120,7 @@ export default function page() {
                                     <td className="px-6 py-4 text-sm text-gray-700">{student.age}</td>
                                     <td className="px-6 py-4 text-sm text-gray-700">{student.gender}</td>
                                     <td className="px-6 py-4">
-                                        <span className={`px-3 py-1 text-xs font-semibold ${student.status === "Active" ? 'text-green-700 bg-green-100 ' : "text-red-700 bg-red-100 " }rounded-full`} >{student.status}</span>
+                                        <span className={`px-3 py-1 text-xs font-semibold ${student.status === "Active" ? 'text-green-700 bg-green-100 ' : "text-red-700 bg-red-100 "}rounded-full`} >{student.status}</span>
                                     </td>
                                     <td className="px-6 py-4">
                                         <Link href={`/admin/students/${student.id}`} className="text-blue-600 hover:text-blue-700 text-sm font-medium">View Student</Link>

@@ -1,9 +1,8 @@
 import PrintButton from "@/components/PrintButton";
-import Image from "next/image";
 
 export default function PrintResultPage() {
   return (
-    <div className="bg-white text-black overflow-auto">
+    <div className="bg-white text-black overflow-auto h-screen">
       {/* page container (A4-ish width) */}
       <div className="mx-auto w-[210mm] max-w-full px-4 py-6 print:px-0 print:py-0">
         <div className="print-view">
@@ -43,13 +42,13 @@ export default function PrintResultPage() {
 
           {/* Result Sheet Title */}
           <div className="my-4 text-center">
-            <h2 className="inline-block border-2 border-black px-3 py-2 text-[14pt] font-bold uppercase tracking-[2px]">
+            <h2 className="inline-block border-2 border-black px-3 py-2 rounded-xl text-[14pt] font-bold uppercase tracking-[2px]">
               TERMINAL REPORT SHEET
             </h2>
           </div>
 
           {/* Student Information Grid */}
-          <div className="mb-4 grid grid-cols-4 gap-y-2 border border-black p-3 text-[9pt]">
+          <div className="mb-4 grid grid-cols-4 gap-y-2 border rounded-xl border-black p-3 text-[9pt]">
             <div className="font-semibold">Name:</div>
             <div className="col-span-1 font-bold">LIAM ANDERSON</div>
             <div className="font-semibold">Admission No:</div>
@@ -57,18 +56,11 @@ export default function PrintResultPage() {
 
             <div className="font-semibold">Class:</div>
             <div className="font-bold">GRADE 3A</div>
-            <div className="font-semibold">Sex:</div>
-            <div className="font-bold">MALE</div>
 
             <div className="font-semibold">Term:</div>
             <div className="font-bold">SECOND TERM</div>
             <div className="font-semibold">Session:</div>
             <div className="font-bold">2023/2024</div>
-
-            <div className="font-semibold">Date of Birth:</div>
-            <div className="font-bold">15th March, 2014</div>
-            <div className="font-semibold">Age:</div>
-            <div className="font-bold">9 YEARS</div>
 
             <div className="font-semibold">No. in Class:</div>
             <div className="font-bold">28</div>
@@ -213,7 +205,7 @@ export default function PrintResultPage() {
           </div>
 
           {/* Behavioural Traits Tables */}
-          <div className="mb-4 grid grid-cols-1 gap-3 md:grid-cols-2">
+          <div className="mb-4 grid grid-cols-2 gap-3 md:grid-cols-2">
             {/* Affective */}
             <div>
               <table className="w-full border-collapse text-[9pt]">
@@ -373,16 +365,10 @@ export default function PrintResultPage() {
           </div>
 
           {/* Next Term */}
-          <div className="border-2 border-black p-3 text-center text-[9pt]">
             <div>
               <span className="font-bold uppercase">Next Term Begins:</span>{" "}
               Monday, 15th April, 2024
             </div>
-            <div>
-              <span className="font-bold uppercase">School Fees:</span>{" "}
-              ₦150,000.00 (Due on resumption)
-            </div>
-          </div>
         </div>
       </div>
       <PrintButton />

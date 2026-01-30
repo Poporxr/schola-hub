@@ -1,6 +1,7 @@
-import StudentShell from "@/components/student/StudentShell";
+import TeacherShell from "@/components/teacher/TeacherShell";
 
-export default function StudentLayout({
+
+export default function TeacherLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -9,9 +10,9 @@ export default function StudentLayout({
 
   <main className="flex-1 flex flex-col min-w-0 overflow-hidden h-screen mb-20">  
       <div className="flex-1 overflow-y-auto custom-scroll bg-slate-50" >
-        <StudentShell>
+        <TeacherShell>
            {children}
-        </StudentShell>
+        </TeacherShell>
 
       </div>
     </main>

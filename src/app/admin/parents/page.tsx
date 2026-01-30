@@ -14,8 +14,16 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Pagination from "@/components/Pagination";
-import { parentsMock } from "@/utils/students";
-
+import { classes, parentsMock } from "@/utils/students";
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 
 const Page = () => {
@@ -132,19 +140,33 @@ const Page = () => {
                                 />
                             </div>
 
-                            <select className="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-sm focus:outline-none focus:border-indigo-500 text-slate-600">
-                                <option value="">All Classes</option>
-                                <option value="jss1">JSS 1</option>
-                                <option value="jss2">JSS 2</option>
-                                <option value="sss1">SSS 1</option>
-                            </select>
-
-                            <select className="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-sm focus:outline-none focus:border-indigo-500 text-slate-600">
-                                <option value="">Payment Status</option>
-                                <option value="paid">Paid</option>
-                                <option value="partial">Partial</option>
-                                <option value="owing">Owing</option>
-                            </select>
+                            <Select >
+                                <SelectTrigger className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm">
+                                    <SelectValue placeholder="Select a Class" />
+                                </SelectTrigger>
+                                <SelectContent className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+                                    <SelectGroup >
+                                        {classes.map((classItem) => {
+                                            return (
+                                                <SelectItem key={classItem.id} className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-black" value={classItem.id}>{`Class ${classItem.name}`}</SelectItem>
+                                            )
+                                        })}
+                                    </SelectGroup>
+                                </SelectContent>
+                            </Select>
+                            
+                            <Select>
+                                <SelectTrigger className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm">
+                                    <SelectValue placeholder="Payment Status" />
+                                </SelectTrigger>
+                                <SelectContent className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+                                    <SelectGroup>
+                                        <SelectItem className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-black" value="First Term">Paid</SelectItem>
+                                        <SelectItem className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-black" value="Second Term">Owing</SelectItem>
+                                        <SelectItem className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-black" value="Third Term">Partial</SelectItem>
+                                    </SelectGroup>
+                                </SelectContent>
+                            </Select>
 
                             <div className="flex gap-2">
                                 <button className="flex-1 px-3 py-2 bg-indigo-50 text-indigo-700 rounded-md text-sm font-medium hover:bg-indigo-100">

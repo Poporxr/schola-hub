@@ -1,9 +1,18 @@
 import ClassInsights from "@/components/ClassInsights";
 import GradeBreakdown from "@/components/GradeBreakdown";
-import { resultsMock } from "@/utils/students";
+import { classes, resultsMock } from "@/utils/students";
 import { ArrowUp, ArrowUpDown, Award, BarChart3, CheckCircle, CheckCircle2, Download, Lightbulb, PieChart, Printer, Search, Send, Sliders, Star, TrendingUp, Trophy, Upload, Users } from "lucide-react";
 import Image from "next/image"
 import Link from "next/link";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 const Page = () => {
     return (
@@ -46,35 +55,40 @@ const Page = () => {
                         <Sliders className="w-5 h-5 text-purple-600" />
                         Filter Results
                     </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {/*<!-- Class filter dropdown --> */}
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">Class</label>
-                            <select className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm">
-                                <option>All Classes</option>
-                                <option>Grade 3A</option>
-                                <option>Grade 3B</option>
-                                <option>Grade 4A</option>
-                            </select>
+                        <Select >
+                            <SelectTrigger className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm">
+                                <SelectValue placeholder="Select a Class" />
+                            </SelectTrigger>
+                            <SelectContent className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+                                <SelectGroup >
+                                    {classes.map((classItem) => {
+                                        return (
+                                            <SelectItem key={classItem.id} className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-black" value={classItem.id}>{`Class ${classItem.name}`}</SelectItem>
+                                        )
+                                    })}
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
                         </div>
                         {/* Term/Semester filter */}
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">Term / Semester</label>
-                            <select className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm">
-                                <option>First Term</option>
-                                <option>Second Term</option>
-                                <option>Third Term</option>
-                            </select>
-                        </div>
-                        {/* <!-- Subject filter --> */}
-                        <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">Subject</label>
-                            <select className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm">
-                                <option>All Subjects</option>
-                                <option>Mathematics</option>
-                                <option>English</option>
-                                <option>Science</option>
-                            </select>
+                        <Select>
+                            <SelectTrigger className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm">
+                                <SelectValue placeholder="Select a Term" />
+                            </SelectTrigger>
+                            <SelectContent className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+                                <SelectGroup>
+                                    <SelectItem className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-black" value="First Term">First Term</SelectItem>
+                                    <SelectItem className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-black" value="Second Term">Second Term</SelectItem>
+                                    <SelectItem className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-black" value="Third Term">Third Term</SelectItem>
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
                         </div>
                         {/*<!-- Student search input --> */}
                         <div>
@@ -86,11 +100,11 @@ const Page = () => {
                         </div>
                         {/*  <!-- Apply filters button --> */}
                         <div className="flex items-end">
-                            <button className="w-full px-4 py-2 bg-linear-to-r from-purple-600 to-indigo-600 text-white rounded-lg text-sm font-medium hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md">
+                            <button type="submit" className="w-full px-4 py-2 bg-linear-to-r from-purple-600 to-indigo-600 text-white rounded-lg text-sm font-medium hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md">
                                 Apply Filters
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
                 {/* Academic performance summary cards */}
@@ -208,7 +222,7 @@ const Page = () => {
                                         </td>
                                         <td className="px-6 py-4 text-center">
                                             <span className={`grade-badge inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-linear-to-r from-emerald-500 to-emerald-600 text-white shadow-md`}>
-                                               {resultItem.grade}
+                                                {resultItem.grade}
                                             </span>
                                         </td>
                                         <td className="px-6 py-4 text-center">

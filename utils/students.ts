@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { ClassRow, StudentRow, TeacherRow, SubjectCard, ResultRow, SubjectBreakdownRow, ParentRow, FeeStructure, ClassAssignment } from "./types";
+import { ClassRow, StudentRow, TeacherRow, SubjectCard, ResultRow, SubjectBreakdownRow, ParentRow, FeeStructure, ClassAssignment, NoticeItem, ScheduleItem } from "./types";
 
 export const students: StudentRow[] = [
   {
@@ -926,4 +926,46 @@ export const assignments: ClassAssignment[] = [
       },
     ]
 
+
+export const schedule: ScheduleItem[] = [
+  {
+    time: "09:00",
+    meridiem: "AM",
+    title: "Advanced Mathematics",
+    meta: "Room 302 • Mr. Anderson",
+    tone: "indigo",
+  },
+  {
+    time: "11:30",
+    meridiem: "AM",
+    title: "Physics Lab",
+    meta: "Lab 4 • Mrs. Davis",
+    tone: "orange",
+  },
+  {
+    time: "02:00",
+    meridiem: "PM",
+    title: "English Literature",
+    meta: "Room 105 • Ms. Thompson",
+    tone: "green",
+  },
+];
+
+export const notices: NoticeItem[] = [
+  {
+    from: "Admin Office",
+    message: "School will remain closed on Monday due to public holiday.",
+    dot: "red",
+  },
+  {
+    from: "Sports Dept",
+    message: "Annual sports day registration closes tomorrow.",
+    dot: "blue",
+  },
+  {
+    from: "Library",
+    message: "New science journals are now available for checkout.",
+    dot: "green",
+  },
+];
 

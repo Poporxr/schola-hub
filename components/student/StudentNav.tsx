@@ -1,21 +1,20 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Bell, Menu, Search } from "lucide-react";
+import { Bell, GraduationCap, Menu, Search } from "lucide-react";
 
 function getTitleFromPath(pathname: string) {
   const path = pathname.replace(/\/$/, "");
 
   if (/^\/student\/dashboard\/[^/]+$/.test(path)) return "Dashboard Overview";
   if (/^\/student\/profile\/[^/]+$/.test(path)) return " Profile";
-  if (/^\/student\/attendance\/[^/]+$/.test(path)) return "Attendance Overview";
-  if (/^\/student\/tuition\/[^/]+$/.test(path)) return "Tuition & Fees";
 
-  if (path === "/student/subjects") return "Subjects";
+
+  if (path === "/student/subjects") return "My Subjects";
   if (path === "/student/teachers") return "Teachers";
   if (path === "/student/result") return "Result";
   if (path === "/student/attendance") return "Attendance";
-  if (path === "/student/fees") return "Tuition & Fees";
+  if (path === "/student/tuition") return "Fees Overview";
   if (path === "/student/profile") return "Profile Overview";
 
   return "Dashboard Overview";
@@ -35,9 +34,17 @@ const StudentNav = ({ onToggleSidebar }: { onToggleSidebar: () => void }) => {
           <Menu className="w-6 h-6" />
         </button>
 
-        <h1 className="text-xl font-semibold text-slate-800">
-          {getTitleFromPath(pathname)}
-        </h1>
+        <div className="pl-2">
+          <div className="flex lg:hidden md:hidden items-center gap-2 text-indigo-600 font-bold text-xl">
+            <GraduationCap className="w-8 h-8" />
+            <span>Schola | Hub</span>
+          </div>
+          <h1 className="md:text-xl md:font-semibold md:text-slate-800 lg:block md:block text-xs">
+            {getTitleFromPath(pathname)}
+          </h1>
+        </div>
+
+
       </div>
 
       <div className="flex items-center gap-4">

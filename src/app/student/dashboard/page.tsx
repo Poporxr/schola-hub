@@ -1,3 +1,4 @@
+import ScheduleAndNotices from "@/components/student/ScheduleAndNotices";
 import { AlertCircle, BookOpen, CheckCircle, Library, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
@@ -38,7 +39,7 @@ const Page = () => {
                         <h3 className="text-gray-500 text-sm font-medium">Term Fees</h3>
                         <span className="p-2 bg-orange-50 text-orange-600 rounded-lg">
                             <AlertCircle className="w-4 h-4" />
-                            </span>
+                        </span>
                     </div>
                     <div className="flex items-end gap-2">
                         <span className="text-3xl font-bold text-gray-900">$450</span>
@@ -51,7 +52,7 @@ const Page = () => {
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="text-gray-500 text-sm font-medium">Current GPA</h3>
                         <span className="p-2 bg-purple-50 text-purple-600 rounded-lg">
-                            <TrendingUp className="w-4 h-4" /> 
+                            <TrendingUp className="w-4 h-4" />
                         </span>
                     </div>
                     <div className="flex items-end gap-2">
@@ -75,7 +76,7 @@ const Page = () => {
                     <Link href={"/student/subjects"} className="text-sm text-indigo-600 font-medium mt-3 hover:underline">View All &rarr;</Link>
                 </div>
             </div>
-
+            <ScheduleAndNotices />
         </div>
     );
 }
