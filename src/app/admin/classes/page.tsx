@@ -9,7 +9,7 @@ const Page = () => {
                 <h2 className="text-2xl font-bold text-slate-800">Classes</h2>
                         <button className="flex items-center gap-2 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
                             <Plus className="w-4 h-4" />
-                            <span className="text-sm font-medium">Add Teacher</span>
+                            <span className="text-sm font-medium">Add Class</span>
                         </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

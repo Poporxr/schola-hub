@@ -1,6 +1,7 @@
 import { subjectsMock } from "@/utils/students";
 import Image from "next/image";
 import { Globe, MoreVertical, } from "lucide-react";
+import { role } from "@/lib/utils";
 
 const SubjectCard = () => {
     return (
@@ -28,10 +29,10 @@ const SubjectCard = () => {
                             <p className="text-sm font-medium text-gray-900 truncate">{subject.teacher.name}</p>
                             <p className="text-xs text-gray-500 truncate">{subject.teacher.role}</p>
                         </div>
-                        <div className="flex gap-2">
+                        {role === 'admin' && <div className="flex gap-2">
                             <button className="text-indigo-600 hover:text-indigo-900 text-xs font-medium">Edit</button>
                             <button className="text-red-600 hover:text-red-900 text-xs font-medium">Remove</button>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             ))}

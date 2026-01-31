@@ -132,3 +132,54 @@ export type NoticeItem = {
   message: string;
   dot: DotTone;
 };
+
+export type TimetableDay = "Mon" | "Tue" | "Wed" | "Thu" | "Fri";
+
+export type TimetableCell =
+  | {
+      type: "class";
+      subject: string; // e.g. "Math"
+      teacher: string; // e.g. "Ms. Lee"
+      style: {
+        container: string; // e.g. "bg-blue-50 border-blue-200"
+        title: string;     // e.g. "text-blue-900"
+        subtitle: string;  // e.g. "text-blue-600"
+      };
+    }
+  | {
+      type: "lunch";
+      label: string; // usually "Lunch"
+    }
+  | null;
+
+export type WeeklyTimetableMock = {
+  times: string[]; // left column
+  days: TimetableDay[];
+  grid: Record<TimetableDay, TimetableCell[]>; // each day has same length as times
+};
+
+export type Weekday = "MON" | "TUE" | "WED" | "THU" | "FRI";
+
+export type TimetableTime = {
+  day: Weekday;
+  start: string; // "08:00"
+  end: string;   // "09:00"
+};
+
+export type TimetableEntry = {
+  id: string;
+
+  // "classid[]": keep it array so a single lesson can target multiple arms if needed
+  classIds: string[];     // e.g. ["cls_jss2a"]
+  subjectId: string;      // e.g. "sub_math"
+  teacherId: string;      // e.g. "tch_ade"
+  venueId: string;        // e.g. "ven_room204"
+
+  time: TimetableTime;
+
+  // optional but useful later
+  sessionId?: string;     // "2025/2026"
+  termId?: string;        // "term_1"
+  status?: "ACTIVE" | "CANCELLED";
+  note?: string;
+};

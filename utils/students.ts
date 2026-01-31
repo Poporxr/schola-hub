@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { ClassRow, StudentRow, TeacherRow, SubjectCard, ResultRow, SubjectBreakdownRow, ParentRow, FeeStructure, ClassAssignment, NoticeItem, ScheduleItem } from "./types";
+import { ClassRow, StudentRow, TeacherRow, SubjectCard, ResultRow, SubjectBreakdownRow, ParentRow, FeeStructure, ClassAssignment, NoticeItem, ScheduleItem, WeeklyTimetableMock, TimetableEntry} from "./types";
 
 export const students: StudentRow[] = [
   {
@@ -969,3 +969,266 @@ export const notices: NoticeItem[] = [
   },
 ];
 
+
+
+export const weeklyTimetableMock: WeeklyTimetableMock = {
+  times: ["9:00 AM", "10:30 AM", "12:00 PM", "1:30 PM", "3:00 PM"],
+  days: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+  grid: {
+    Mon: [
+      {
+        type: "class",
+        subject: "Math",
+        teacher: "Ms. Lee",
+        style: {
+          container: "bg-blue-50 border-blue-200",
+          title: "text-blue-900",
+          subtitle: "text-blue-600",
+        },
+      },
+      {
+        type: "class",
+        subject: "Science",
+        teacher: "Dr. Chen",
+        style: {
+          container: "bg-purple-50 border-purple-200",
+          title: "text-purple-900",
+          subtitle: "text-purple-600",
+        },
+      },
+      { type: "lunch", label: "Lunch" },
+      {
+        type: "class",
+        subject: "English",
+        teacher: "Ms. Johnson",
+        style: {
+          container: "bg-green-50 border-green-200",
+          title: "text-green-900",
+          subtitle: "text-green-600",
+        },
+      },
+      {
+        type: "class",
+        subject: "PE",
+        teacher: "Mr. Wilson",
+        style: {
+          container: "bg-red-50 border-red-200",
+          title: "text-red-900",
+          subtitle: "text-red-600",
+        },
+      },
+    ],
+    Tue: [
+      {
+        type: "class",
+        subject: "English",
+        teacher: "Ms. Johnson",
+        style: {
+          container: "bg-green-50 border-green-200",
+          title: "text-green-900",
+          subtitle: "text-green-600",
+        },
+      },
+      {
+        type: "class",
+        subject: "Social",
+        teacher: "Mr. Thompson",
+        style: {
+          container: "bg-orange-50 border-orange-200",
+          title: "text-orange-900",
+          subtitle: "text-orange-600",
+        },
+      },
+      { type: "lunch", label: "Lunch" },
+      {
+        type: "class",
+        subject: "Math",
+        teacher: "Ms. Lee",
+        style: {
+          container: "bg-blue-50 border-blue-200",
+          title: "text-blue-900",
+          subtitle: "text-blue-600",
+        },
+      },
+      null, // empty slot
+    ],
+    Wed: [
+      {
+        type: "class",
+        subject: "Math",
+        teacher: "Ms. Lee",
+        style: {
+          container: "bg-blue-50 border-blue-200",
+          title: "text-blue-900",
+          subtitle: "text-blue-600",
+        },
+      },
+      {
+        type: "class",
+        subject: "Science",
+        teacher: "Dr. Chen",
+        style: {
+          container: "bg-purple-50 border-purple-200",
+          title: "text-purple-900",
+          subtitle: "text-purple-600",
+        },
+      },
+      { type: "lunch", label: "Lunch" },
+      {
+        type: "class",
+        subject: "Art",
+        teacher: "Ms. Rodriguez",
+        style: {
+          container: "bg-pink-50 border-pink-200",
+          title: "text-pink-900",
+          subtitle: "text-pink-600",
+        },
+      },
+      {
+        type: "class",
+        subject: "PE",
+        teacher: "Mr. Wilson",
+        style: {
+          container: "bg-red-50 border-red-200",
+          title: "text-red-900",
+          subtitle: "text-red-600",
+        },
+      },
+    ],
+    Thu: [
+      {
+        type: "class",
+        subject: "English",
+        teacher: "Ms. Johnson",
+        style: {
+          container: "bg-green-50 border-green-200",
+          title: "text-green-900",
+          subtitle: "text-green-600",
+        },
+      },
+      {
+        type: "class",
+        subject: "Social",
+        teacher: "Mr. Thompson",
+        style: {
+          container: "bg-orange-50 border-orange-200",
+          title: "text-orange-900",
+          subtitle: "text-orange-600",
+        },
+      },
+      { type: "lunch", label: "Lunch" },
+      {
+        type: "class",
+        subject: "Art",
+        teacher: "Ms. Rodriguez",
+        style: {
+          container: "bg-pink-50 border-pink-200",
+          title: "text-pink-900",
+          subtitle: "text-pink-600",
+        },
+      },
+      null, // empty slot
+    ],
+    Fri: [
+      {
+        type: "class",
+        subject: "Math",
+        teacher: "Ms. Lee",
+        style: {
+          container: "bg-blue-50 border-blue-200",
+          title: "text-blue-900",
+          subtitle: "text-blue-600",
+        },
+      },
+      {
+        type: "class",
+        subject: "Science",
+        teacher: "Dr. Chen",
+        style: {
+          container: "bg-purple-50 border-purple-200",
+          title: "text-purple-900",
+          subtitle: "text-purple-600",
+        },
+      },
+      { type: "lunch", label: "Lunch" },
+      {
+        type: "class",
+        subject: "Social",
+        teacher: "Mr. Thompson",
+        style: {
+          container: "bg-orange-50 border-orange-200",
+          title: "text-orange-900",
+          subtitle: "text-orange-600",
+        },
+      },
+      {
+        type: "class",
+        subject: "PE",
+        teacher: "Mr. Wilson",
+        style: {
+          container: "bg-red-50 border-red-200",
+          title: "text-red-900",
+          subtitle: "text-red-600",
+        },
+      },
+    ],
+  },
+};
+export const teacherMock = {
+  id: "tch_0001",
+  name: "Mr. Adeyemi",
+};
+
+export const subjectMock = [
+  { id: "sub_math", name: "Mathematics", color: "TEAL" as const },
+  { id: "sub_fmath", name: "Further Maths", color: "BLUE" as const },
+  { id: "sub_bscience", name: "Basic Science", color: "PURPLE" as const },
+];
+
+export const classesMock = [
+  { id: "cls_jss2a", name: "JSS 2A" },
+  { id: "cls_jss3c", name: "JSS 3C" },
+  { id: "cls_ss1b", name: "SS 1B" },
+  { id: "cls_ss2b", name: "SS 2B" },
+  { id: "cls_ss3a", name: "SS 3A" },
+];
+
+export const venuesMock = [
+  { id: "ven_room204", name: "Room 204" },
+  { id: "ven_room205", name: "Room 205" },
+  { id: "ven_room206", name: "Room 206" },
+  { id: "ven_room301", name: "Room 301" },
+  { id: "ven_room302", name: "Room 302" },
+  { id: "ven_lab2", name: "Lab 2" },
+];
+
+
+export const timetableEntriesMock: TimetableEntry[] = [
+  // 08:00 - 09:00
+  { id: "tt_001", classIds: ["cls_jss2a"], subjectId: "sub_math", teacherId: "tch_0001", venueId: "ven_room204", time: { day: "MON", start: "08:00", end: "09:00" } },
+  { id: "tt_002", classIds: ["cls_ss2b"], subjectId: "sub_fmath", teacherId: "tch_0001", venueId: "ven_room301", time: { day: "TUE", start: "08:00", end: "09:00" } },
+  { id: "tt_003", classIds: ["cls_jss2a"], subjectId: "sub_bscience", teacherId: "tch_0001", venueId: "ven_lab2",   time: { day: "WED", start: "08:00", end: "09:00" } },
+  { id: "tt_004", classIds: ["cls_ss1b"], subjectId: "sub_math", teacherId: "tch_0001", venueId: "ven_room206", time: { day: "THU", start: "08:00", end: "09:00" } },
+  // FRI 08:00 free
+
+  // 09:00 - 10:00
+  { id: "tt_005", classIds: ["cls_jss3c"], subjectId: "sub_math", teacherId: "tch_0001", venueId: "ven_room205", time: { day: "TUE", start: "09:00", end: "10:00" } },
+  { id: "tt_006", classIds: ["cls_ss3a"], subjectId: "sub_fmath", teacherId: "tch_0001", venueId: "ven_room302", time: { day: "THU", start: "09:00", end: "10:00" } },
+  { id: "tt_007", classIds: ["cls_jss2a"], subjectId: "sub_math", teacherId: "tch_0001", venueId: "ven_room204", time: { day: "FRI", start: "09:00", end: "10:00" } },
+  // MON/WED free at 09:00
+
+  // 10:30 - 11:30
+  { id: "tt_008", classIds: ["cls_ss2b"], subjectId: "sub_fmath", teacherId: "tch_0001", venueId: "ven_room301", time: { day: "MON", start: "10:30", end: "11:30" } },
+  { id: "tt_009", classIds: ["cls_ss1b"], subjectId: "sub_math",  teacherId: "tch_0001", venueId: "ven_room206", time: { day: "WED", start: "10:30", end: "11:30" } },
+  { id: "tt_010", classIds: ["cls_ss3a"], subjectId: "sub_fmath", teacherId: "tch_0001", venueId: "ven_room302", time: { day: "FRI", start: "10:30", end: "11:30" } },
+  // TUE/THU free at 10:30
+
+  // Lunch block is NOT stored as TimetableEntry (optional).
+  // Usually lunch is a school-wide policy, not a teacher lesson.
+
+  // 02:00 - 03:00
+  { id: "tt_011", classIds: ["cls_jss3c"], subjectId: "sub_math",     teacherId: "tch_0001", venueId: "ven_room205", time: { day: "MON", start: "14:00", end: "15:00" } },
+  { id: "tt_012", classIds: ["cls_jss2a"], subjectId: "sub_bscience", teacherId: "tch_0001", venueId: "ven_lab2",    time: { day: "TUE", start: "14:00", end: "15:00" } },
+  { id: "tt_013", classIds: ["cls_jss2a"], subjectId: "sub_math",     teacherId: "tch_0001", venueId: "ven_room204", time: { day: "THU", start: "14:00", end: "15:00" } },
+  // WED/FRI free at 14:00
+];
