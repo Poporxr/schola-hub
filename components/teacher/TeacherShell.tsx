@@ -35,9 +35,9 @@ export default function TeacherShell({ children }: { children: React.ReactNode }
       )}
 
       {/* Main */}
-      <main className="flex-1 flex flex-col min-w-0 overflow-hidden h-screen">
+      <main className="flex-1 flex flex-col min-w-0 max-h-screen overflow-y-auto bg-slate-50 custom-scroll">
         <TeacherNav onToggleSidebar={() => setSidebarOpen(v => !v)} />
-        <div className="flex-1 overflow-y-auto p-4 custom-scroll bg-slate-50">
+        <div className="flex-1 p-4">
           {children}
         </div>
       </main>

@@ -16,7 +16,7 @@ import {
 
 export default function page() {
     return (
-        <div className="px-4">
+        <div className="">
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                 <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">

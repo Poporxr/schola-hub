@@ -23,7 +23,7 @@ const TeacherNav = ({ onToggleSidebar }: { onToggleSidebar: () => void }) => {
     const pathname = usePathname();
 
     return (
-        <header className="min-h-16 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8 shrink-0">
+        <header className="sticky top-0 z-30 min-h-16 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8">
             <div className="flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0 flex-1">
                 <button
                     onClick={onToggleSidebar}

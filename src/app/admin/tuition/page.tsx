@@ -6,7 +6,7 @@ export default async function Page() {
   // const assignments = await db.feeAssignment.findMany(...)
 
   return (
-    <div className="flex-1 p-6 overflow-y-auto">
+    <div className="flex-1 overflow-y-auto">
       <FeesManagementClient />
     </div>
   );

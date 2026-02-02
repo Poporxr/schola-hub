@@ -39,7 +39,7 @@ const StudentMenu = ({ open, onClose }: AdminMenuProps) => {
     return (
         <aside className={[
             "w-64 bg-white border-r border-slate-200 shrink-0 flex flex-col",
-            "fixed inset-0 z-20 lg:static lg:inset-auto lg:h-screen",
+            "fixed inset-0 z-40 lg:static lg:inset-auto lg:h-screen",
             "transition-transform duration-300 transform",
             open ? "translate-x-0" : "-translate-x-full",
             "lg:translate-x-0",

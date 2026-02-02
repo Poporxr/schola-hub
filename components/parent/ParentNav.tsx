@@ -23,14 +23,14 @@ const ParentNav = ({ onToggleSidebar }: { onToggleSidebar: () => void }) => {
     const pathname = usePathname();
 
     return (
-        <header className="min-h-16 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8 shrink-0">
+        <header className="sticky top-0 z-30 min-h-16 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8">
             <div className="flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0 flex-1">
                 <button
                     onClick={onToggleSidebar}
                     className="lg:hidden text-slate-500 hover:text-slate-700 shrink-0"
                     aria-label="Open sidebar"
                 >
-                    <PanelRightClose className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
 
                 <div className="pl-1 sm:pl-2 min-w-0">
